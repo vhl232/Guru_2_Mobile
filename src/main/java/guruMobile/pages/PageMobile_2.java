@@ -34,6 +34,27 @@ public class PageMobile_2 implements Pageable<PageMobile_2> {
     @FindBy(xpath = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[1]/div/div[3]/button")
     private WebElement addToCartSoniXperia;
 
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[1]/div/div[3]/ul/li[2]/a")
+    private WebElement compareSonyXperia;
+
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[2]/div/div[3]/ul/li[2]/a")
+    private WebElement compareIPHONE;
+
+    @FindBy(xpath = "//*[@title='Compare']")
+    private WebElement compareButton;
+
+    public WebElement getCompareButton() {
+        return compareButton;
+    }
+
+    public WebElement getCompareIPHONE() {
+        return compareIPHONE;
+    }
+
+    public WebElement getCompareSonyXperia() {
+        return compareSonyXperia;
+    }
+
     public WebElement getAddToCartSoniXperia() {
         return addToCartSoniXperia;
     }
