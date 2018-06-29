@@ -21,7 +21,7 @@ public class TestMainClass {
 
         @BeforeClass
         public void setPropertys(){
-                System.setProperty("webdriver.chrome.driver",UtilsClass.locDriverStas);
+                System.setProperty("webdriver.chrome.driver",UtilsClass.locationWebDriver);
                 driver = new ChromeDriver();
                 //driver.get(UtilsClass.urlGuru);
         }

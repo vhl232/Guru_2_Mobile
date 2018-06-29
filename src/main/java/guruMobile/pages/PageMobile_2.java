@@ -26,6 +26,25 @@ public class PageMobile_2 implements Pageable<PageMobile_2> {
     private WebElement sortMenu;
     @FindBy(xpath = "//ul[@class='products-grid']")
     private WebElement productGrid;
+    @FindBy(id = "product-price-1")
+    private WebElement cost;
+    @FindBy(id = "product-collection-image-1")
+    private WebElement soniXperia;
+
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[1]/div/div[3]/button")
+    private WebElement addToCartSoniXperia;
+
+    public WebElement getAddToCartSoniXperia() {
+        return addToCartSoniXperia;
+    }
+
+    public WebElement getSoniXperia() {
+        return soniXperia;
+    }
+
+    public WebElement getCost() {
+        return cost;
+    }
 
     public List<WebElement> getProductsList() {
         return productsList;
