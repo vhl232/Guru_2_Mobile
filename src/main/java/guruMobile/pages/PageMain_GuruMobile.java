@@ -18,6 +18,25 @@ public class PageMain_GuruMobile implements Pageable<PageMain_GuruMobile> {
     @FindBy(tagName = "html")
     private WebElement html;
 
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div/div[3]/div/div[4]/ul/li[1]/a")
+    private WebElement myAccountButton;
+    @FindBy(xpath = "//a[@href='http://live.guru99.com/index.php/customer/account/']")
+    private WebElement accountButton;
+    @FindBy(xpath = "//a[@href='http://live.guru99.com/index.php/customer/account/login/']")
+    private WebElement log_in_Button;
+
+    public WebElement getLog_in_Button() {
+        return log_in_Button;
+    }
+
+    public WebElement getAccountButton() {
+        return accountButton;
+    }
+
+    public WebElement getMyAccountButton() {
+        return myAccountButton;
+    }
+
     public WebElement getHtml() {
         return html;
     }

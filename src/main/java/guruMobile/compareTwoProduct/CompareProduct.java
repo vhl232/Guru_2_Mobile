@@ -59,11 +59,5 @@ public class CompareProduct {
            String namePhone = listPhone.get(i).getText();
             System.out.println(namePhone);
         }
-
-
-
-
-
-
     }
 }

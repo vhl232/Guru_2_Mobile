@@ -14,6 +14,9 @@ public class UtilsClass {
 
     public static String errorMeseg = "Some of the products cannot be ordered in requested quantity.";
     public static String messageEmtyCart = "Shopping Cart is Empty";
-
+    public static String successMessageAccountPage = "Thank you for registering with Main Website Store.";
+    public static String successMessageSHAREEMAIL = "Your Wishlist has been shared.";
+    public static String flatRateCost = "Fixed - $5.00";
+    public static String grand_Cost = "$620.00";
 
 }
