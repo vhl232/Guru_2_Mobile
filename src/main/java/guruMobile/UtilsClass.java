@@ -18,5 +18,8 @@ public class UtilsClass {
     public static String successMessageSHAREEMAIL = "Your Wishlist has been shared.";
     public static String flatRateCost = "Fixed - $5.00";
     public static String grand_Cost = "$620.00";
+    public static String numberOrder = "100007265";
+    public static String orderStatus = "Pending";
+
 
 }

@@ -17,6 +17,14 @@ public class PageClientAccount {
     private WebElement accountButtonWishList;
     @FindBy(xpath = "//*[@id=\"header-account\"]/div/ul/li[3]/a")
     private WebElement accountCart;
+    @FindBy(xpath = "//a[@href='http://live.guru99.com/index.php/sales/order/history/']")
+    private WebElement my_Orders;
+
+
+
+    public WebElement getMy_Orders() {
+        return my_Orders;
+    }
 
     public WebElement getAccountCart() {
         return accountCart;
