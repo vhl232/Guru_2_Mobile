@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
@@ -59,7 +60,7 @@ public class Pdf {
 
         String printOederParent = driver.getWindowHandle();
         String subWindowHandler = null;
-        Set<String>handles = driver.getWindowHandles();
+        Set<String> handles = driver.getWindowHandles();
         Iterator<String> iterator = handles.iterator();
         while (iterator.hasNext()){
             subWindowHandler = iterator.next();
@@ -68,8 +69,14 @@ public class Pdf {
         //Thread.sleep(3000);
         //driver.close();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebElement change =  driver.findElement(By.cssSelector("#destination-settings > div.right-column > button"));
-        change.click();
+
+        //WebElement change =  driver.findElement(By.cssSelector("#destination-settings > div.right-column > button"));
+        //change.click();
+        Utils.saveInPDF(driver, "test.pdf");
+
+        File file = new File("test.pdf");
+        Assert.assertTrue(file.exists() && file.isFile()&& file.length()>0);
+        System.out.println(file.length());
         //PrintOrder_Page printOrder_page = new PrintOrder_Page(driver);
         //printOrder_page.getChangeButton().click();
 
