@@ -79,7 +79,7 @@ public class PurchaseGoodsSHareWithEmail {
 
         Assert.assertEquals(success_message_shared_email,UtilsClass.successMessageSHAREEMAIL);
     }
-    @AfterTest
+    //@AfterTest
     public void close(){
         driver.quit();
     }
