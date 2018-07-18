@@ -59,10 +59,12 @@ public class LogInAndProceedDeliveryGoods {
         CartPage cartPage = new CartPage(driver);
         Select dropCountryCart = new Select(cartPage.getCountryCartChekout());
         dropCountryCart.selectByVisibleText(country);
+
         Select dropStateCart = new Select(cartPage.getStateCartChekout());
         dropStateCart.selectByVisibleText(state);
         cartPage.getPostcodeCartCheckout().sendKeys(zip);
         cartPage.getEstimateButton().click();
+
         String flat_rate = cartPage.getFlatRate().getText();
         Assert.assertEquals(flat_rate,UtilsClass.flatRateCost);
         cartPage.getFlatRateButton().click();
@@ -77,9 +79,11 @@ public class LogInAndProceedDeliveryGoods {
         chekoutPage.getCuntinueBillingButton().click();
         chekoutPage.getAdressForCheckout().sendKeys(address);
         chekoutPage.getCityForCheckout().sendKeys(city);
+
         Select dropState = new Select(chekoutPage.getSteteForCheckout());
         dropState.selectByVisibleText(state);
         chekoutPage.getZipForCheckout().sendKeys(zip);
+
         Select dropCountry = new Select(chekoutPage.getCountryForCheckout());
         dropCountry.selectByVisibleText(country);
         chekoutPage.getTlephoneForCheckout().sendKeys(telephone);

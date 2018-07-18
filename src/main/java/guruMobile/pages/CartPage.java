@@ -25,6 +25,18 @@ public class CartPage {
     private WebElement updateTotalButton;
     @FindBy(xpath = "//*[@id=\"shopping-cart-totals-table\"]/tfoot/tr/td[2]")
     private WebElement grandTotalCoast;
+    @FindBy(xpath = "//*[@id=\"shopping-cart-table\"]/tbody/tr/td[4]/input")
+    private WebElement q_t_y_numbers;
+    @FindBy(xpath = "//*[@id=\"shopping-cart-table\"]/tbody/tr/td[4]/button")
+    private WebElement upDate_Button;
+
+    public WebElement getUpDate_Button() {
+        return upDate_Button;
+    }
+
+    public WebElement getQ_t_y_numbers() {
+        return q_t_y_numbers;
+    }
 
     public WebElement getGrandTotalCoast() {
         return grandTotalCoast;

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PageConfirnation {
     WebDriver driver;
-    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div/div[2]/div/div/p[1]/a")
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div/div[2]/div/div/p[1]")
     private WebElement numberOfOreder;
 
     public WebElement getNumberOfOreder() {

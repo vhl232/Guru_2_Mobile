@@ -23,7 +23,7 @@ public class ChekoutPage {
     private WebElement steteForCheckout;
     @FindBy(xpath = "//*[@id=\"billing-buttons-container\"]/button")
     private WebElement continueButton;
-    @FindBy(xpath = "//*[@id=\"shipping-method-buttons-container\"]/button")
+    @FindBy(xpath = "//*[@id=\"shipping-method-buttons-container\"]/button/span/span")
     private WebElement continueButtonFlateRate;
     @FindBy(id = "p_method_checkmo")
     private WebElement checkMoneyOrder;
@@ -33,6 +33,26 @@ public class ChekoutPage {
     private WebElement placeOrderButton;
     @FindBy(xpath = "//*[@id=\"billing-buttons-container\"]/button")
     private WebElement cuntinueBillingButton;
+    @FindBy(id = "billing:use_for_shipping_yes")
+    private WebElement choiseShipToThisAdress;
+    @FindBy(xpath = "//*[@id=\"p_method_checkmo\"]")
+    private WebElement choiseCheck_Money;
+    @FindBy(xpath = "//*[@id=\"payment-buttons-container\"]/button")
+    private WebElement continuePaymentButton;
+
+
+
+    public WebElement getContinuePaymentButton() {
+        return continuePaymentButton;
+    }
+
+    public WebElement getChoiseCheck_Money() {
+        return choiseCheck_Money;
+    }
+
+    public WebElement getChoiseShipToThisAdress() {
+        return choiseShipToThisAdress;
+    }
 
     public WebElement getCuntinueBillingButton() {
         return cuntinueBillingButton;
