@@ -23,7 +23,7 @@ public class UtilsClass {
 
     static {
         locationWebDriver = "E:\\hachik NE TROGAT\\test\\selenium drivera" +
-                "\\ChromeDriver\\chromedriver_win32 last\\chromedriver.exe";
+                "\\ChromeDriver\\chromedriver_win32\\chromedriver.exe";
         //locationWebDriver = "E:\\Java\\chromedriver.exe";
     }
 

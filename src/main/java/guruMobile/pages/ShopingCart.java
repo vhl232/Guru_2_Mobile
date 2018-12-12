@@ -11,6 +11,30 @@ public class ShopingCart {
 
     @FindBy(xpath = "//*[@class='page-title']")
     private WebElement message;
+    @FindBy(xpath = "//input[@name='coupon_code']")
+    public WebElement discountInputFild;
+    @FindBy(xpath = "//div[@class='button-wrapper']")
+    public WebElement buttonApply;
+    @FindBy(xpath = "//td[@class='a-right']/child::span")
+    public WebElement subTotal;
+    @FindBy(xpath = "//li[@class='success-msg']/descendant::span")
+    public WebElement massedgeSuccess;
+
+    public WebElement getMassedgeSuccess() {
+        return massedgeSuccess;
+    }
+
+    public WebElement getSubTotal() {
+        return subTotal;
+    }
+
+    public WebElement getButtonApply() {
+        return buttonApply;
+    }
+
+    public WebElement getDiscountInputFild() {
+        return discountInputFild;
+    }
 
     public WebElement getMessage() {
         return message;
