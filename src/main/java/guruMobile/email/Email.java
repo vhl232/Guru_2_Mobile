@@ -2,6 +2,7 @@ package guruMobile.email;
 
 import guruMobile.UtilsClass;
 
+import guruMobile.emailUtil.EmailUtil;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,11 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class Email {
     WebDriver driver;
@@ -27,7 +33,6 @@ public class Email {
     @BeforeTest
     public void setPropery() throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", UtilsClass.locationWebDriver);
-        ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver();
         driver.get("http://live.guru99.com/index.php/backendlogin");
 
@@ -40,15 +45,17 @@ public class Email {
     }
 
     @Test
-    public void email() {
+    public void email() throws IOException, InterruptedException {
 
        madgentoAdminPanelPage = new MadgentoAdminPanelPage(driver);
 
         Actions actions = new Actions(driver);
         WebDriverWait wait = new WebDriverWait(driver,10);
+
         WebElement sales = wait.until(ExpectedConditions.visibilityOf(madgentoAdminPanelPage.getSalesButton()));
+
         Action action = actions.moveToElement(sales)
-                .click(madgentoAdminPanelPage.getOrdersButton()).build();
+                        .click(madgentoAdminPanelPage.getOrdersButton()).build();
         action.perform();
 
         Select select = new Select(madgentoAdminPanelPage.getSelectCSV());
@@ -56,6 +63,22 @@ public class Email {
 
         madgentoAdminPanelPage.getExportButton().click();
 
+        String propPath = "E:\\hachik NE TROGAT\\test\\Guru test\\Guru_2_Mobile\\src\\main\\resources\\data.properties";
+        InputStream inputStream = new FileInputStream(new File(propPath));
+        Properties prop = new Properties();
+        prop.load(inputStream);
+
+        String emailAdress = prop.getProperty("emailForPost");
+        String pass = prop.getProperty("passwordForPost");
+
+
+        EmailUtil emailUtils = new EmailUtil(emailAdress,pass);
+
+        emailUtils.send("This is Subject", "Hallo world!",emailAdress,"" +
+                "seriislon@gmail.com");
+
+
+        Thread.sleep(5000);
 
 
     }
